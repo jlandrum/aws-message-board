@@ -1,25 +1,126 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="upr-Rt-9gK">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--James Landrum's Message Board-->
+        <scene sceneID="qBI-67-8qB">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <navigationController title="James Landrum's Message Board" id="upr-Rt-9gK" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8mN-kj-uhZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jgi-Ee-Pdc" kind="relationship" relationship="rootViewController" id="Yjl-sy-fqC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IGa-2x-QZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-659" y="-351"/>
+        </scene>
+        <!--Message Board-->
+        <scene sceneID="WJt-Wo-j5n">
+            <objects>
+                <viewController title="Message Board" id="jgi-Ee-Pdc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="g5j-1G-4oU"/>
+                        <viewControllerLayoutGuide type="bottom" id="x64-Of-DZG"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="Ec0-He-px1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Vib-ws-lwV">
+                                <rect key="frame" x="0.0" y="94" width="600" height="506"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vib-ws-lwV" firstAttribute="top" secondItem="g5j-1G-4oU" secondAttribute="bottom" id="82O-Qj-dXe"/>
+                            <constraint firstItem="Vib-ws-lwV" firstAttribute="leading" secondItem="Ec0-He-px1" secondAttribute="leading" id="HM4-ms-qyM"/>
+                            <constraint firstItem="Vib-ws-lwV" firstAttribute="bottom" secondItem="x64-Of-DZG" secondAttribute="top" id="QwJ-nA-381"/>
+                            <constraint firstAttribute="trailing" secondItem="Vib-ws-lwV" secondAttribute="trailing" id="VB6-WZ-pcg"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Main" prompt="AWS Message Board" id="rT8-Dq-iBc">
+                        <barButtonItem key="rightBarButtonItem" title="Create New" id="o0r-jQ-qWM">
+                            <color key="tintColor" red="0.88136369835937711" green="0.10339231617196765" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="bbb-3L-mXC" kind="presentation" modalPresentationStyle="formSheet" modalTransitionStyle="coverVertical" id="57l-cG-w0w"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="messageTableView" destination="Vib-ws-lwV" id="WQH-wQ-YrW"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Vg-2B-On0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="39" y="-351"/>
+        </scene>
+        <!--New Post View Controller-->
+        <scene sceneID="O6d-bq-Kzj">
+            <objects>
+                <viewController id="bbb-3L-mXC" customClass="NewPostViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XTt-Gv-VWZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="879-82-gST"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Btq-m2-gHq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijN-SP-f2m">
+                                <rect key="frame" x="16" y="550" width="568" height="30"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="postNewMessage:" destination="bbb-3L-mXC" eventType="touchUpInside" id="bSW-gi-8Y9"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nBA-tu-paq">
+                                <rect key="frame" x="16" y="58" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Message Here" translatesAutoresizingMaskIntoConstraints="NO" id="J41-Lz-R1V">
+                                <rect key="frame" x="16" y="96" width="568" height="446"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ijN-SP-f2m" firstAttribute="top" secondItem="J41-Lz-R1V" secondAttribute="bottom" constant="8" symbolic="YES" id="6cF-CG-k1I"/>
+                            <constraint firstAttribute="bottom" secondItem="ijN-SP-f2m" secondAttribute="bottom" constant="20" symbolic="YES" id="81x-FM-1m0"/>
+                            <constraint firstItem="J41-Lz-R1V" firstAttribute="leading" secondItem="Btq-m2-gHq" secondAttribute="leadingMargin" id="BG0-tv-7AU"/>
+                            <constraint firstItem="nBA-tu-paq" firstAttribute="top" secondItem="XTt-Gv-VWZ" secondAttribute="bottom" constant="38" id="CDI-qY-zq2"/>
+                            <constraint firstItem="nBA-tu-paq" firstAttribute="trailing" secondItem="Btq-m2-gHq" secondAttribute="trailingMargin" id="G2e-X3-gqu"/>
+                            <constraint firstItem="J41-Lz-R1V" firstAttribute="top" secondItem="nBA-tu-paq" secondAttribute="bottom" constant="8" symbolic="YES" id="Uuv-np-5PG"/>
+                            <constraint firstItem="ijN-SP-f2m" firstAttribute="trailing" secondItem="J41-Lz-R1V" secondAttribute="trailing" id="XV2-vm-Pwb"/>
+                            <constraint firstItem="ijN-SP-f2m" firstAttribute="leading" secondItem="J41-Lz-R1V" secondAttribute="leading" id="f2p-6y-Hth"/>
+                            <constraint firstItem="J41-Lz-R1V" firstAttribute="leading" secondItem="nBA-tu-paq" secondAttribute="leading" id="keN-sJ-97p"/>
+                            <constraint firstItem="nBA-tu-paq" firstAttribute="trailing" secondItem="J41-Lz-R1V" secondAttribute="trailing" id="oLc-w0-GUm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="postButton" destination="ijN-SP-f2m" id="ocC-RN-diR"/>
+                        <outlet property="postMessage" destination="J41-Lz-R1V" id="iHf-4v-kxR"/>
+                        <outlet property="postTitle" destination="nBA-tu-paq" id="BRI-MD-X7l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vJ2-it-NFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="707" y="-351"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.88136369839999995" green="0.1033923162" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

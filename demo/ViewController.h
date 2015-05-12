@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MessageBoardTableController.h"
+#import "NewPostViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<NewPostViewControllerDelegate>
 
+@property (strong, nonatomic) IBOutlet UITableView * messageTableView;
 
 @end
 
