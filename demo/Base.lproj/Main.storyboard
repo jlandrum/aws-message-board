@@ -76,8 +76,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nBA-tu-paq">
+                                <rect key="frame" x="16" y="31" width="464" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Enter Message Here" translatesAutoresizingMaskIntoConstraints="NO" id="J41-Lz-R1V">
+                                <rect key="frame" x="16" y="69" width="568" height="511"/>
+                                <color key="backgroundColor" red="0.9534011994949495" green="0.9534011994949495" blue="0.9534011994949495" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijN-SP-f2m">
-                                <rect key="frame" x="16" y="550" width="568" height="30"/>
+                                <rect key="frame" x="488" y="31" width="96" height="30"/>
+                                <color key="backgroundColor" red="0.95340119950000002" green="0.95340119950000002" blue="0.95340119950000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="jGQ-7k-2zY"/>
+                                </constraints>
                                 <state key="normal" title="Post">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -85,30 +100,18 @@
                                     <action selector="postNewMessage:" destination="bbb-3L-mXC" eventType="touchUpInside" id="bSW-gi-8Y9"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nBA-tu-paq">
-                                <rect key="frame" x="16" y="58" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Enter Message Here" translatesAutoresizingMaskIntoConstraints="NO" id="J41-Lz-R1V">
-                                <rect key="frame" x="16" y="96" width="568" height="446"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ijN-SP-f2m" firstAttribute="top" secondItem="J41-Lz-R1V" secondAttribute="bottom" constant="8" symbolic="YES" id="6cF-CG-k1I"/>
-                            <constraint firstAttribute="bottom" secondItem="ijN-SP-f2m" secondAttribute="bottom" constant="20" symbolic="YES" id="81x-FM-1m0"/>
-                            <constraint firstItem="J41-Lz-R1V" firstAttribute="leading" secondItem="Btq-m2-gHq" secondAttribute="leadingMargin" id="BG0-tv-7AU"/>
-                            <constraint firstItem="nBA-tu-paq" firstAttribute="top" secondItem="XTt-Gv-VWZ" secondAttribute="bottom" constant="38" id="CDI-qY-zq2"/>
-                            <constraint firstItem="nBA-tu-paq" firstAttribute="trailing" secondItem="Btq-m2-gHq" secondAttribute="trailingMargin" id="G2e-X3-gqu"/>
-                            <constraint firstItem="J41-Lz-R1V" firstAttribute="top" secondItem="nBA-tu-paq" secondAttribute="bottom" constant="8" symbolic="YES" id="Uuv-np-5PG"/>
-                            <constraint firstItem="ijN-SP-f2m" firstAttribute="trailing" secondItem="J41-Lz-R1V" secondAttribute="trailing" id="XV2-vm-Pwb"/>
-                            <constraint firstItem="ijN-SP-f2m" firstAttribute="leading" secondItem="J41-Lz-R1V" secondAttribute="leading" id="f2p-6y-Hth"/>
-                            <constraint firstItem="J41-Lz-R1V" firstAttribute="leading" secondItem="nBA-tu-paq" secondAttribute="leading" id="keN-sJ-97p"/>
-                            <constraint firstItem="nBA-tu-paq" firstAttribute="trailing" secondItem="J41-Lz-R1V" secondAttribute="trailing" id="oLc-w0-GUm"/>
+                            <constraint firstItem="J41-Lz-R1V" firstAttribute="leading" secondItem="nBA-tu-paq" secondAttribute="leading" id="2Mx-kK-MvZ"/>
+                            <constraint firstItem="J41-Lz-R1V" firstAttribute="trailing" secondItem="ijN-SP-f2m" secondAttribute="trailing" id="4yx-QS-EUY"/>
+                            <constraint firstItem="nBA-tu-paq" firstAttribute="top" secondItem="XTt-Gv-VWZ" secondAttribute="bottom" constant="31" id="8K6-CS-Nwi"/>
+                            <constraint firstItem="ijN-SP-f2m" firstAttribute="trailing" secondItem="Btq-m2-gHq" secondAttribute="trailingMargin" id="8Oa-Kn-VZV"/>
+                            <constraint firstItem="J41-Lz-R1V" firstAttribute="leading" secondItem="Btq-m2-gHq" secondAttribute="leadingMargin" id="IaP-Bb-cZL"/>
+                            <constraint firstItem="ijN-SP-f2m" firstAttribute="leading" secondItem="nBA-tu-paq" secondAttribute="trailing" constant="8" symbolic="YES" id="Rqd-uG-pWg"/>
+                            <constraint firstAttribute="bottom" secondItem="J41-Lz-R1V" secondAttribute="bottom" constant="20" symbolic="YES" id="Xnv-FT-jEd"/>
+                            <constraint firstItem="ijN-SP-f2m" firstAttribute="top" secondItem="nBA-tu-paq" secondAttribute="top" id="ffL-dt-KqE"/>
+                            <constraint firstItem="J41-Lz-R1V" firstAttribute="top" secondItem="nBA-tu-paq" secondAttribute="bottom" constant="8" symbolic="YES" id="ltR-pI-p92"/>
                         </constraints>
                     </view>
                     <connections>
